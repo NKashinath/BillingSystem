@@ -1,0 +1,6 @@
+<div class="box">
+    <h5 style="font-weight: 700;">Items</h5>
+    <div *ngFor = "let item of items">
+        <div class="b" >{{item.name}}<span style="float:right">{{item.price | currency:'INR'}}</span></div>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="box">
+    <!-- <button type="button" class="btn btn-primary pos">
+        Cart
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+            {{productSelected.length}}
+          <span class="visually-hidden"></span>
+        </span>
+      </button>
+     -->
+      <span class="badge bg-warning text-dark pos">
+        Cart
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+            {{productSelected.length}}
+          <span class="visually-hidden"></span>
+        </span>
+      </span>
+    <h5 style="font-weight: 700;">New Bill</h5>
+    <div *ngFor = "let product of productSelected">
+        <div class="b" >{{product.name}}<small>&nbsp; (Qty: {{product.quantity}})</small><span style="float:right">{{product.price  | currency:'INR'}}</span></div>
+    </div>
+    <button (click)="createdOrder()">Order</button>
+</div>

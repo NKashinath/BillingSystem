@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="container">
+      <!-- <form>
+        <div class="form-group">
+            <select class="form-control" [(ngModel)]="productSelected.name" #product="ngModel" name="productSelected">
+                <option *ngFor="let product of products" [ngValue]="product">{{product.name}}</option>
+            </select>
+        </div>
+        <div>
+            <button (ngSubmit)= "addToNewBill()">Add</button>
+        </div>
+      </form> -->
+    <div class="row">
+      <div class="col-md-3">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+
+            <form #sp="ngForm" (ngSubmit)="addToNewBill(sp)"  > 
+              <div class="form-group">
+                <select id="selectP" name="name" class="form-control" ngModel>
+                  <!-- <option selected>Open this select menu</option> -->
+                  <option *ngFor="let product of products" [value]="product.name">
+                    {{product.name}}
+                  </option>
+                </select>
+                <input type="number" name = "quantity" class="form-control" ngModel placeholder="Quantity"><br>&nbsp;
+                <button class="btn btn-primary">Add</button>    
+              </div>
+            </form>
+          </div>
+        </div>      
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-9 box">
+        <div class="row">
+          <div class="col-sm-6">
+            <app-new-bill [productSelected] = "productSelected" (orderDetails) = saveOrderDetails($event)></app-new-bill>
+          </div>
+          <div class="col-sm-6">
+            <app-items [items]="products"></app-items>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <app-my-bills [orders]="orderDetails"></app-my-bills>
+          </div>
+          <div class="col-sm-6">
+            <app-sales [salesByDay] = "salesByDay" [salesByMonth] = "salesByMonth" [salesByYear] = "salesByYear"></app-sales>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3 container-fluid">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <form #productForm = "ngForm" (ngSubmit)= "productAdd(productForm)">
+                <input type="text" class="form-control" [(ngModel)] = "product.name" #productName="ngModel"  name = "name" placeholder="Name">
+                <input type="number" class="form-control" [(ngModel)] = "product.price" #productPrice = "ngModel" name = "price" placeholder="Price">
+              <div class="form-group"></div>
+                <button type="submit" class="btn btn-primary float-right login_btn">Add</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+</body>
+</html>
+

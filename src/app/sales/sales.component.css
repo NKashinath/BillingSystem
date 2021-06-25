@@ -1,0 +1,22 @@
+.b{
+    border: 2px solid black;
+    padding: 39px;
+    height: 6px;
+    width: 26px;
+    margin-top: 29px;
+    margin-right: 29px;
+    margin-left: 20px;
+}
+.box{
+    border: 1px solid black;
+    padding: 3px;
+    height: 300px;
+    margin-top: 5px;
+    margin-left: -18px;
+    margin-right: 1px;
+}
+
+.a{
+    margin-left: 22px;
+    font-weight: 700;
+}

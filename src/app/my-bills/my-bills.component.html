@@ -1,0 +1,8 @@
+<div class="box">
+    <h5 style="font-weight: 700;">My Bills</h5>
+    <div *ngFor = "let order of orders">
+        <div class="b" >{{order.billNo}}<span style="float:right">{{order.orderDate | date : 'dd/MM/yy'}}</span>
+            <div><small>{{order.name}} (Qty:{{order.quantity}})</small><small style="float:right">{{order.price | currency:'INR'}}</small></div>
+        </div>
+    </div>
+</div>
